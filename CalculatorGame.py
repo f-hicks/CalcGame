@@ -163,7 +163,7 @@ turns = "y"
 streak = 1
 startReady = "p"
 while turns == "y":
-	tries = 6
+	tries = 2
 	
 
 # creates each operation to be used multiple times. 
@@ -258,6 +258,7 @@ while turns == "y":
 	other2 = 0
 	correct = 0
 	incorrect = 0
+	randStreak = 0
 
 #starts countdown sequence when something is typed 
 	print()	
@@ -267,6 +268,7 @@ while turns == "y":
 		difficulty = 4
 
 	startReady = input(Fore.YELLOW + "Press enter to play normally (normal mode) or type in one of the above options: ").lower()
+	clearConsole()
 	if startReady == "c" and streak == 1:
 		difficulty = 4
 		points = 150
@@ -283,9 +285,8 @@ while turns == "y":
 		clearConsole()
 		print(Fore.RED + "Access denied due to your streak being too high")
 
-	clearConsole()
-	if streak > 2 and streak < 10:
-		randStreak = random.randint(1, 20)
+	if streak > 1 and streak < 10:
+		randStreak = random.randint(1, 30)
 		if randStreak > 0 and randStreak < 7:
 			print(Fore.GREEN + "You found a common streak power!")
 			print()
@@ -301,10 +302,15 @@ while turns == "y":
 			print()
 			print("Your streak is protected even if you get an answer incorrect")
 			incorrect = -5
+		elif randStreak == 12:
+			print(Fore.YELLOW + "You found a legendary streak power!!")
+			print()
+			print("Ther is no timer for this round!")
+		time.sleep(2.5)
+		print()
 
 		
-	print(Fore.YELLOW + "")
-	print("3")
+	print(Fore.YELLOW + "3")
 	countdownSound()
 	print()
 	time.sleep(0.4)
@@ -394,7 +400,10 @@ while turns == "y":
 				print()
 				winsound.Beep(1500, 100)
 				flush_input()
-				choice = int(inputimeout(prompt = Fore.MAGENTA + "What operation has happened here: ", timeout = timer))
+				if randStreak == 12:
+					choice = int(input(Fore.MAGENTA + "What operation has happened here: "))
+				else:
+					choice = int(inputimeout(prompt = Fore.MAGENTA + "What operation has happened here: ", timeout = timer))
 				if choice > 4 or choice < 1:
 					choice = int("f")
 				break
@@ -1019,7 +1028,7 @@ print()
 while True:
 	try:
 		winsound.Beep(1500, 100)
-		which = input(Fore.MAGENTA + "View challenger leaderboard (y/n): ").lower
+		which = input(Fore.MAGENTA + "View challenger leaderboard (y/n): ").lower()
 		if which == "y" or which == "n":
 			break
 		else:

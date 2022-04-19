@@ -2,6 +2,12 @@ a*****************************
 CHANGELOG (added as of 1.8)
 *****************************
 
+2.6:
+	streak powers(pt1):
+		chance to gain certain powers when you are on a streak above 1 and below 10
+		different rarities of streak powers. The rarer it is, the more powerful it is
+	bug fixes:
+		critical issue with when choosing to view challenegr leaderboard at the end
 2.5.1:
 	reworded some text and fixed some spelling errors, for clarity
 	Your streak will reset after playing a game at a streak of 10
