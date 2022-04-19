@@ -163,7 +163,7 @@ turns = "y"
 streak = 1
 startReady = "p"
 while turns == "y":
-	tries = 2
+	tries = 6
 	
 
 # creates each operation to be used multiple times. 
@@ -285,7 +285,7 @@ while turns == "y":
 		clearConsole()
 		print(Fore.RED + "Access denied due to your streak being too high")
 
-	if streak > 1 and streak < 10:
+	if streak > 1:
 		randStreak = random.randint(1, 50)
 		if randStreak > 0 and randStreak < 7:
 			print(Fore.GREEN + "You found a common streak power!")
@@ -310,6 +310,10 @@ while turns == "y":
 			print(Fore.RED + "No streak power found for this round")
 		time.sleep(2.5)
 		print()
+	else:
+		print(Fore.CYAN + "Gain a streak above 1 to have a chance to get a streak power")
+		print()
+		time.sleep(2.5)
 
 		
 	print(Fore.YELLOW + "3")
