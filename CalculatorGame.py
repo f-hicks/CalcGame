@@ -253,6 +253,11 @@ while turns == "y":
 		print("Or type 'p' to practice")
 	time.sleep(0.5)
 
+	startingPoints = points
+	other1 = 0
+	other2 = 0
+	correct = 0
+	incorrect = 0
 
 #starts countdown sequence when something is typed 
 	print()	
@@ -277,12 +282,27 @@ while turns == "y":
 	elif startReady == "c"  and difficulty != 4:
 		clearConsole()
 		print(Fore.RED + "Access denied due to your streak being too high")
+
+	clearConsole()
+	if streak > 2 and streak < 10:
+		randStreak = random.randint(1, 20)
+		if randStreak > 0 and randStreak < 7:
+			print(Fore.GREEN + "You found a common streak power!")
+			print()
+			print("+ 10 points per each correct answer")
+			gain += 10
+		elif randStreak > 6 and randStreak < 10:
+			print(Fore.BLUE + "You found a rare streak power!")
+			print()
+			print("Your streak is increased by one")
+			streak += 1
+		elif randStreak == 10 or randStreak == 11:
+			print(Fore.MAGENTA + "You found an epic streak power!")
+			print()
+			print("Your streak is protected even if you get an answer incorrect")
+			incorrect = -5
+
 		
-	startingPoints = points
-	other1 = 0
-	other2 = 0
-	correct = 0
-	incorrect = 0
 	print(Fore.YELLOW + "")
 	print("3")
 	countdownSound()
