@@ -8,6 +8,8 @@ CHANGELOG (added as of 1.8)
 		different rarities of streak powers. The rarer it is, the more powerful it is
 	bug fixes:
 		critical issue with when choosing to view challenger leaderboard at the end
+	Timeout changes:
+		all +  1 second
 
 2.5.1:
 	reworded some text and fixed some spelling errors, for clarity

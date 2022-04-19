@@ -43,7 +43,7 @@ winsound.Beep(1500, 100)
 winsound.Beep(1500, 100)
 #prints the highest score
 clearConsole()
-print(Fore.YELLOW + "UPDATE(2.5): Streaks and general improvments!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.5.1)")
+print(Fore.YELLOW + "UPDATE(2.6): Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.6)")
 print()
 print(Fore.RED + "Hard maintainability: if someone takes your spot from the leaderboard,")
 print("then you will be erased from the leaderboard entirely! ")
@@ -286,7 +286,7 @@ while turns == "y":
 		print(Fore.RED + "Access denied due to your streak being too high")
 
 	if streak > 1 and streak < 10:
-		randStreak = random.randint(1, 30)
+		randStreak = random.randint(1, 50)
 		if randStreak > 0 and randStreak < 7:
 			print(Fore.GREEN + "You found a common streak power!")
 			print()
@@ -306,6 +306,8 @@ while turns == "y":
 			print(Fore.YELLOW + "You found a legendary streak power!!")
 			print()
 			print("Ther is no timer for this round!")
+		else:
+			print(Fore.RED + "No streak power found for this round")
 		time.sleep(2.5)
 		print()
 
@@ -342,19 +344,19 @@ while turns == "y":
 		if difficulty == 1:
 			num1 = random.randint(25,100) 
 			num2 = random.randint(1,25) 
-			timer = 10 
+			timer = 11
 		elif difficulty == 2:
 			num1 = random.randint(25, 150) 
 			num2 = random.randint(-25, 25)
-			timer = 7.5 
+			timer = 8.5 
 		elif difficulty == 3:
 			num1 = random.randint(-50, 150) 
 			num2 = random.randint(-100, -50)
-			timer = 5
+			timer = 6
 		else:
 			num1 = random.randint(-50, 150) 
 			num2 = random.randint(-100, -50)
-			timer = 3
+			timer = 4
 			reduction = 30
 			gain = 10
 
@@ -910,8 +912,9 @@ while turns == "y":
 			incSound()
 	if turns == "y":
 		print()
-		if incorrect == 0 and startReady != "p":	
+		if incorrect < 1 and startReady != "p":	
 			streak += 1
+			incorrect = 0
 		if incorrect > 0 or startReady == "p":
 			streak = 1
 		if streak > 10:
