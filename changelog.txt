@@ -3,7 +3,11 @@ CHANGELOG (added as of 1.8)
 *****************************
 
 2.6.1:
-	updated start up instructions to be more clear.
+	visual changes:
+		updated start up instructions to be more clear.
+		extended length of all leaderboards
+	technical changes:
+		scores and points displaayed as reals so game is compatible with future updates
 
 2.6:
 	streak powers(pt1):

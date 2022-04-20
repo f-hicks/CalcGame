@@ -1,7 +1,4 @@
 
-
-# playsound("chime_up.wav") shows leaderboard
-# playsound("fanfare.wav") is getting on leaderboard sound sound
 # winsound.Beep(1500, 100) is prompt for imp
 import winsound
 def incSound():
@@ -57,9 +54,9 @@ readDifficulty1st = open("1stDifficulty.txt", "r")
 readDifficultyVari1st = readDifficulty1st.read()
 readScoreVari1st = readScore1st.read()
 readNameVari1st = readName1st.read()
-print(Fore.WHITE + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + "─────────│─────────────────────────────────────────────────────────────────│")
 print(Fore.YELLOW + "Rank no.1" + Fore.WHITE + "│", Fore.YELLOW + readScoreVari1st, "point(s) by", readNameVari1st,"- Difficulty:",readDifficultyVari1st)
-print(Fore.WHITE + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.05)
 readScore1st.close()
 readName1st.close()
@@ -73,7 +70,7 @@ readScoreVari2nd = readScore2nd.read()
 readNameVari2nd = readName2nd.read()
 readDifficultyVari2nd = readDifficulty2nd.read()
 print(Style.BRIGHT  + Fore.RED +  "Rank no.2" + Fore.WHITE + "│", Fore.RED + readScoreVari2nd, "point(s) by", readNameVari2nd, "- Difficulty:",readDifficultyVari2nd)
-print(Fore.WHITE + Style.NORMAL + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + Style.NORMAL + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.05)
 readScore2nd.close()
 readName2nd.close()
@@ -88,7 +85,7 @@ readScoreVari3rd = readScore3rd.read()
 readNameVari3rd = readName3rd.read()
 readDifficultyVari3rd = readDifficulty3rd.read()
 print(Fore.CYAN + "Rank no.3" + Fore.WHITE + "│",Fore.CYAN + readScoreVari3rd, "point(s) by", readNameVari3rd,"- Difficulty:",readDifficultyVari3rd)
-print(Fore.WHITE + Style.NORMAL + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + Style.NORMAL + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.05)
 readScore3rd.close()
 readName3rd.close()
@@ -103,7 +100,7 @@ readScoreVari4th = readScore4th.read()
 readNameVari4th = readName4th.read()
 readDifficultyVari4th = readDifficulty4th.read()
 print("Rank no.4" + Fore.WHITE + "│", readScoreVari4th, "point(s) by", readNameVari4th,"- Difficulty:",readDifficultyVari4th)
-print(Fore.WHITE + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.05)
 readScore4th.close()
 readName4th.close()
@@ -118,7 +115,7 @@ readScoreVari5th = readScore5th.read()
 readNameVari5th = readName5th.read()
 readDifficultyVari5th = readDifficulty5th.read()
 print("Rank no.5│", readScoreVari5th, "point(s) by", readNameVari5th,"- Difficulty:",readDifficultyVari5th)
-print(Fore.WHITE + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.1)
 print()
 readScore5th.close()
@@ -166,7 +163,7 @@ turns = "y"
 streak = 1
 startReady = "p"
 while turns == "y":
-	tries = 6
+	tries = 2
 	
 
 # creates each operation to be used multiple times. 
@@ -209,7 +206,7 @@ while turns == "y":
 	clearConsole()
 
 # determines the reduction and gain of points		
-	points = 150 
+	points = 150.0 
 	reduction = 20 * streak
 	gain = 30 * streak
 
@@ -289,12 +286,17 @@ while turns == "y":
 		print(Fore.RED + "Access denied due to your streak being too high")
 
 	if streak > 1:
-		randStreak = random.randint(1, 50)
+		randStreak = random.randint(0, 40)
 		if randStreak > 0 and randStreak < 7:
 			print(Fore.GREEN + "You found a common streak power!")
 			print()
-			print("+ 10 points per each correct answer")
-			gain += 10
+			randC = random.randint(0,2)
+			if randC == 1:
+				print("+ 10 points per each correct answer")
+				gain += 10
+			elif randC == 2:
+				print("+ 5% points per each correct answer")
+				gain += (gain / 100) * 5
 		elif randStreak > 6 and randStreak < 10:
 			print(Fore.BLUE + "You found a rare streak power!")
 			print()
@@ -599,34 +601,34 @@ while turns == "y":
 
 #opens all the text files storing the high score details and assigns the content of each to a different variable
 	scoreFile5th = open("5thScore.txt", "r")
-	potNewScore5th = int(scoreFile5th.readline())
+	potNewScore5th = float(scoreFile5th.readline())
 
 	scoreFile4th = open("4thScore.txt", "r")
-	potNewScore4th = int(scoreFile4th.readline())
+	potNewScore4th = float(scoreFile4th.readline())
 
 	scoreFile3rd = open("3rdScore.txt", "r")
-	potNewScore3rd = int(scoreFile3rd.readline())
+	potNewScore3rd = float(scoreFile3rd.readline())
 
 	scoreFile2nd = open("2ndScore.txt", "r")
-	potNewScore2nd = int(scoreFile2nd.readline())
+	potNewScore2nd = float(scoreFile2nd.readline())
 
 	scoreFile1st = open("1stScore.txt", "r")
-	potNewScore1st = int(scoreFile1st.readline())
+	potNewScore1st = float(scoreFile1st.readline())
 
 	scoreFileChallenger1st = open("ChallengerScore1st.txt", "r")
-	potNewScoreChallenger1st = int(scoreFileChallenger1st.readline())
+	potNewScoreChallenger1st = float(scoreFileChallenger1st.readline())
 
 	scoreFileChallenger2nd = open("ChallengerScore2nd.txt", "r")
-	potNewScoreChallenger2nd = int(scoreFileChallenger2nd.readline())
+	potNewScoreChallenger2nd = float(scoreFileChallenger2nd.readline())
 
 	scoreFileChallenger3rd = open("ChallengerScore3rd.txt", "r")
-	potNewScoreChallenger3rd = int(scoreFileChallenger3rd.readline())
+	potNewScoreChallenger3rd = float(scoreFileChallenger3rd.readline())
 
 	scoreFileChallenger4th = open("ChallengerScore4th.txt", "r")
-	potNewScoreChallenger4th = int(scoreFileChallenger4th.readline())
+	potNewScoreChallenger4th = float(scoreFileChallenger4th.readline())
 
 	scoreFileChallenger5th = open("ChallengerScore5th.txt", "r")
-	potNewScoreChallenger5th = int(scoreFileChallenger5th.readline())
+	potNewScoreChallenger5th = float(scoreFileChallenger5th.readline())
 
 
 
@@ -962,9 +964,9 @@ readDifficulty1st = open("1stDifficulty.txt", "r")
 readDifficultyVari1st = readDifficulty1st.read()
 readScoreVari1st = readScore1st.read()
 readNameVari1st = readName1st.read()
-print(Fore.WHITE + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + "─────────│─────────────────────────────────────────────────────────────────│")
 print(Fore.YELLOW + "Rank no.1" + Fore.WHITE + "│", Fore.YELLOW + readScoreVari1st, "point(s) by", readNameVari1st,"- Difficulty:",readDifficultyVari1st)
-print(Fore.WHITE + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.05)
 readScore1st.close()
 readName1st.close()
@@ -978,7 +980,7 @@ readScoreVari2nd = readScore2nd.read()
 readNameVari2nd = readName2nd.read()
 readDifficultyVari2nd = readDifficulty2nd.read()
 print(Style.BRIGHT  + Fore.RED +  "Rank no.2" + Fore.WHITE + "│", Fore.RED + readScoreVari2nd, "point(s) by", readNameVari2nd, "- Difficulty:",readDifficultyVari2nd)
-print(Fore.WHITE + Style.NORMAL + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + Style.NORMAL + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.05)
 readScore2nd.close()
 readName2nd.close()
@@ -993,7 +995,7 @@ readScoreVari3rd = readScore3rd.read()
 readNameVari3rd = readName3rd.read()
 readDifficultyVari3rd = readDifficulty3rd.read()
 print(Fore.CYAN + "Rank no.3" + Fore.WHITE + "│",Fore.CYAN + readScoreVari3rd, "point(s) by", readNameVari3rd,"- Difficulty:",readDifficultyVari3rd)
-print(Fore.WHITE + Style.NORMAL + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + Style.NORMAL + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.05)
 readScore3rd.close()
 readName3rd.close()
@@ -1008,7 +1010,7 @@ readScoreVari4th = readScore4th.read()
 readNameVari4th = readName4th.read()
 readDifficultyVari4th = readDifficulty4th.read()
 print("Rank no.4" + Fore.WHITE + "│", readScoreVari4th, "point(s) by", readNameVari4th,"- Difficulty:",readDifficultyVari4th)
-print(Fore.WHITE + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.05)
 readScore4th.close()
 readName4th.close()
@@ -1023,13 +1025,12 @@ readScoreVari5th = readScore5th.read()
 readNameVari5th = readName5th.read()
 readDifficultyVari5th = readDifficulty5th.read()
 print("Rank no.5│", readScoreVari5th, "point(s) by", readNameVari5th,"- Difficulty:",readDifficultyVari5th)
-print(Fore.WHITE + "─────────│────────────────────────────────────────────────────│")
+print(Fore.WHITE + "─────────│─────────────────────────────────────────────────────────────────│")
 time.sleep(0.1)
 print()
 readScore5th.close()
 readName5th.close()
 readDifficulty5th.close() 
-
 time.sleep(1)
 print(Fore.YELLOW + "If you scored high enough, you should be able to view your score here")
 print()
