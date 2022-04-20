@@ -1,6 +1,9 @@
-a*****************************
+*****************************
 CHANGELOG (added as of 1.8)
 *****************************
+
+2.6.1:
+	updated start up instructions to be more clear.
 
 2.6:
 	streak powers(pt1):
