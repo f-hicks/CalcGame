@@ -43,7 +43,7 @@ winsound.Beep(1500, 100)
 winsound.Beep(1500, 100)
 #prints the highest score
 clearConsole()
-print(Fore.YELLOW + "UPDATE(2.6): Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.6)")
+print(Fore.YELLOW + "UPDATE(2.6): Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.6.1)")
 print()
 print(Fore.RED + "Hard maintainability: if someone takes your spot from the leaderboard,")
 print("then you will be erased from the leaderboard entirely! ")
