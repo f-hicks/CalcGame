@@ -7,7 +7,7 @@ CHANGELOG (added as of 1.8)
 		updated start up instructions to be more clear.
 		extended length of all leaderboards
 	technical changes:
-		scores and points displaayed as reals so game is compatible with future updates
+		scores and points displayed as reals so game is compatible with future updates
 
 2.6:
 	streak powers(pt1):
