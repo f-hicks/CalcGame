@@ -11,6 +11,8 @@ CHANGELOG (added as of 1.8)
 		rare = timer length + 2 seconds
 		epic = + 100 points per question when answered correctly
 		legendary = Answer only one question and gain the same as what you would of gained if you answered 5 questions
+	other changes:
+		now a lot more common to get a streak power but there is still a chance you wont get one
 
 2.6.1:
 	visual changes:

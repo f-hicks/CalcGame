@@ -286,7 +286,7 @@ while turns == "y":
 		print(Fore.RED + "Access denied due to your streak being too high")
 
 	if streak > 1:
-		randStreak = random.randint(1, 30) #0, 40
+		randStreak = random.randint(1, 20) #0, 20
 		if randStreak > 0 and randStreak < 7:
 			print(Fore.GREEN + "You found a common streak power!")
 			print()
