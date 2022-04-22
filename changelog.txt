@@ -2,6 +2,16 @@
 CHANGELOG (added as of 1.8)
 *****************************
 
+2.7:
+	bug fixes:
+		cases of streak not resetting even when an answer is incorrect
+		chance streak power not loading properly
+	NEW double the amount of streak powers for each rarity (streak powers pt2):
+		common = + 5% points
+		rare = timer length + 2 seconds
+		epic = + 100 points per question when answered correctly
+		legendary = Answer only one question and gain the same as what you would of gained if you answered 5 questions
+
 2.6.1:
 	visual changes:
 		updated start up instructions to be more clear.

@@ -40,7 +40,7 @@ winsound.Beep(1500, 100)
 winsound.Beep(1500, 100)
 #prints the highest score
 clearConsole()
-print(Fore.YELLOW + "UPDATE(2.6): Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.6.1)")
+print(Fore.YELLOW + "UPDATE(2.7):x2 Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.7)")
 print()
 print(Fore.RED + "Hard maintainability: if someone takes your spot from the leaderboard,")
 print("then you will be erased from the leaderboard entirely! ")
@@ -163,7 +163,7 @@ turns = "y"
 streak = 1
 startReady = "p"
 while turns == "y":
-	tries = 2
+	tries = 6
 	
 
 # creates each operation to be used multiple times. 
@@ -286,31 +286,49 @@ while turns == "y":
 		print(Fore.RED + "Access denied due to your streak being too high")
 
 	if streak > 1:
-		randStreak = random.randint(0, 40)
+		randStreak = random.randint(1, 30) #0, 40
 		if randStreak > 0 and randStreak < 7:
 			print(Fore.GREEN + "You found a common streak power!")
 			print()
-			randC = random.randint(0,2)
+			randC = random.randint(1,2)
 			if randC == 1:
 				print("+ 10 points per each correct answer")
 				gain += 10
 			elif randC == 2:
 				print("+ 5% points per each correct answer")
 				gain += (gain / 100) * 5
+
 		elif randStreak > 6 and randStreak < 10:
 			print(Fore.BLUE + "You found a rare streak power!")
 			print()
-			print("Your streak is increased by one")
-			streak += 1
+			randR = random.randint(1,2)
+			if randR == 1:
+				print("Your streak is increased by one")
+				streak += 1
+			elif randR == 2:
+				print("Timer length is increased by 2 seconds")
+
 		elif randStreak == 10 or randStreak == 11:
 			print(Fore.MAGENTA + "You found an epic streak power!")
 			print()
-			print("Your streak is protected even if you get an answer incorrect")
-			incorrect = -5
+			randE = random.randint(1,2)
+			if randE == 1:
+				print("Your streak is protected even if you get an answer incorrect")
+				incorrect = -5
+			elif randE == 2:
+				print("+ 100 points per correct answer")
+				gain += 100
+
 		elif randStreak == 12:
 			print(Fore.YELLOW + "You found a legendary streak power!!")
 			print()
-			print("Ther is no timer for this round!")
+			randL = random.randint(1,2)
+			if randL == 1:
+				print("There is no timer for this round!")
+			elif randL == 2:
+				print("All questions in one!")
+				gain *= 5
+				tries = 2
 		else:
 			print(Fore.RED + "No streak power found for this round")
 		time.sleep(2.5)
@@ -369,6 +387,8 @@ while turns == "y":
 			reduction = 30
 			gain = 10
 
+		if randStreak > 6 and randStreak < 10 and randR == 2:
+			timer += 2
 
 	
 
@@ -393,7 +413,7 @@ while turns == "y":
 		tries -= 1
 		print(Fore.YELLOW)
 		clearConsole()
-		print(tries,"round(s) remaining")
+		print(tries,"question(s) remaining")
 		print()
 		print("Your current amount of points:",points)
 		print(Fore.CYAN + "------------------------------------------------------------------") 
@@ -597,6 +617,7 @@ while turns == "y":
 		time.sleep(4)
 		clearConsole()
 	clearConsole()
+	incorrect = incorrect + other1 + other2
 		
 
 #opens all the text files storing the high score details and assigns the content of each to a different variable
