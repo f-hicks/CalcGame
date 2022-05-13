@@ -1,0 +1,5 @@
+winsound
+inputimeout
+colorama
+subprocess
+msvcrt
