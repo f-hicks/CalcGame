@@ -51,7 +51,7 @@ CHANGELOG (added as of 1.8)
 	NEW: view how you gained and lost your points during a game of 'normal' mode
 2.4:
 	more sound has been implemented as well as some being removed
-	unfortunatly wav files are buggy for some reason and so cant use as much sound as i want
+	unfortunatly wav files are buggy for some reason and so can't use as much sound as i want
 	slight improvments to practice mode being displayed
 	changed some inputs about how they are displayed
 	challener starting difficulty is now set to 150, prev 50
