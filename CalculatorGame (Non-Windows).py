@@ -11,10 +11,7 @@ from colorama import init, Fore, Style
 from subprocess import call
 init()
 
-def flush_input():
-	import msvcrt
-	while msvcrt.kbhit():
-		sys.warnoptionsmsvcrt.getch()
+
 
 
 nameCheck = []

@@ -28,7 +28,7 @@ init()
 def flush_input():
 	import msvcrt
 	while msvcrt.kbhit():
-		sys.warnoptionsmsvcrt.getch()
+		msvcrt.getch()
 
 
 nameCheck = []
