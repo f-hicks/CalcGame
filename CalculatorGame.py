@@ -1,4 +1,5 @@
 
+
 # winsound.Beep(1500, 100) is prompt for imp
 import winsound
 def incSound():
@@ -25,9 +26,9 @@ from subprocess import call
 init()
 
 def flush_input():
-        import msvcrt
-        while msvcrt.kbhit():
-            msvcrt.getch()
+	import msvcrt
+	while msvcrt.kbhit():
+		sys.warnoptionsmsvcrt.getch()
 
 
 nameCheck = []
@@ -40,7 +41,7 @@ winsound.Beep(1500, 100)
 winsound.Beep(1500, 100)
 #prints the highest score
 clearConsole()
-print(Fore.YELLOW + "UPDATE(2.7):x2 Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.7)")
+print(Fore.YELLOW + "UPDATE(2.7):x2 Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.7.1)")
 print()
 print(Fore.RED + "Hard maintainability: if someone takes your spot from the leaderboard,")
 print("then you will be erased from the leaderboard entirely! ")
@@ -206,9 +207,9 @@ while turns == "y":
 	clearConsole()
 
 # determines the reduction and gain of points		
-	points = 150.0 
-	reduction = 20 * streak
-	gain = 30 * streak
+	points = 500 * streak 
+	reduction = 50 * streak
+	gain = 75 * streak
 
 
 #displays the difficulty
@@ -271,7 +272,6 @@ while turns == "y":
 	clearConsole()
 	if startReady == "c" and streak == 1:
 		difficulty = 4
-		points = 150
 		clearConsole()
 		print("Get ready challenger")
 		time.sleep(1.5)
@@ -292,11 +292,11 @@ while turns == "y":
 			print()
 			randC = random.randint(1,2)
 			if randC == 1:
-				print("+ 10 points per each correct answer")
-				gain += 10
+				print("+ 50 points per each correct answer") #10
+				gain += 50
 			elif randC == 2:
-				print("+ 5% points per each correct answer")
-				gain += (gain / 100) * 5
+				print("+ 15% points per each correct answer") #5%
+				gain += (gain / 100) * 15
 
 		elif randStreak > 6 and randStreak < 10:
 			print(Fore.BLUE + "You found a rare streak power!")
@@ -306,7 +306,7 @@ while turns == "y":
 				print("Your streak is increased by one")
 				streak += 1
 			elif randR == 2:
-				print("Timer length is increased by 2 seconds")
+				print("Timeout length is increased by 3 seconds") #2
 
 		elif randStreak == 10 or randStreak == 11:
 			print(Fore.MAGENTA + "You found an epic streak power!")
@@ -316,7 +316,7 @@ while turns == "y":
 				print("Your streak is protected even if you get an answer incorrect")
 				incorrect = -5
 			elif randE == 2:
-				print("+ 100 points per correct answer")
+				print("+ 500 points per correct answer")
 				gain += 100
 
 		elif randStreak == 12:
@@ -325,8 +325,14 @@ while turns == "y":
 			randL = random.randint(1,2)
 			if randL == 1:
 				print("There is no timer for this round!")
+				time.sleep(0.75)
+				print("And start with double the amount of points!")
+				points *= 2
 			elif randL == 2:
 				print("All questions in one!")
+				time.sleep(0.75)
+				print("And gain a bonus 30% of your points gained")
+				gain += (gain / 100) * 30
 				gain *= 5
 				tries = 2
 		else:
@@ -384,11 +390,10 @@ while turns == "y":
 			num1 = random.randint(-50, 150) 
 			num2 = random.randint(-100, -50)
 			timer = 4
-			reduction = 30
-			gain = 10
 
 		if randStreak > 6 and randStreak < 10 and randR == 2:
-			timer += 2
+			timer += 3
+			randStreak = 0
 
 	
 

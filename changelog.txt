@@ -2,6 +2,19 @@
 CHANGELOG (added as of 1.8)
 *****************************
 
+2.7.2:
+	bug fixes:
+		rare streak  power (timer) stacking
+	balance changes:
+		starting points same for all difficulty (500 x streak stacks)
+		Same for gain (+ 75) and reduction (-50) x streak stacks
+		common streak power(1): +10 points --> +50 points gained per correct answer
+		common streak power(2): +5% points --> +15% points gained per correct answer
+		rare streak power(2): +2 seconds --> +3 seconds on timeout
+		epic streak power(2): +100 points --> +500 points gained per correct answer
+		legendary streak power(1): Also start with double the amount of points
+		legendary streak power(2): Also gain +30% points when answered correctly
+
 2.7:
 	bug fixes:
 		cases of streak not resetting even when an answer is incorrect
