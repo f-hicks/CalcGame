@@ -17,9 +17,10 @@ init()
 
 nameCheck = []
 
+os = platform.system()
 
 #Creating the clearconsole function
-if platform.system() == 'Windows':
+if os == 'Windows':
 	clearConsole = lambda: os.system('cls')
 else:
 	clearConsole = lambda: os.system('clear')
@@ -142,7 +143,10 @@ while True:
 
 if which == "y":
 	clearConsole()
-	call(["python", "chalLeader.py"])
+		try:
+		call(["python", "chalLeader.py"])
+	except FileNotFoundError:
+		call(["python3", "chalLeader.py"])
 
 turns = "y"
 streak = 1
@@ -1078,7 +1082,10 @@ while True:
 print()
 if which == "y":
 	clearConsole()
-	call(["python", "chalLeader.py"])
+	try:
+		call(["python", "chalLeader.py"])
+	except FileNotFoundError:
+		call(["python3", "chalLeader.py"])
 
 while True:
 	try:
