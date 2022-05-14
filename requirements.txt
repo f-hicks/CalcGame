@@ -1,4 +1,4 @@
-winsound
+winsound (windows version only)
 inputimeout
 colorama
 subprocess

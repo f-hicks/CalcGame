@@ -1,19 +1,5 @@
 
 
-# winsound.Beep(1500, 100) is prompt for imp
-import winsound
-def incSound():
-	winsound.Beep(300, 600)
-def corSound():
-	winsound.Beep(1200, 600)
-def countdownSound():
-	winsound.Beep(1500,100)
-
-
-
-
-
-
 
 #Importing libaries
 from inputimeout import inputimeout, TimeoutOccurred
@@ -36,9 +22,6 @@ nameCheck = []
 
 #Creating the clearconsole function
 clearConsole = lambda: os.system('cls')
-
-winsound.Beep(1500, 100)
-winsound.Beep(1500, 100)
 #prints the highest score
 clearConsole()
 print(Fore.YELLOW + "UPDATE(2.7):x2 Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.7.1)")
@@ -146,7 +129,7 @@ print()
 
 while True:
 	try:
-		winsound.Beep(1500, 100)
+		  
 		which = input(Fore.MAGENTA + "View challenger leaderboard (y/n): ").lower()
 		if which == "y" or which == "n":
 			break
@@ -154,7 +137,7 @@ while True:
 			which = int("f")
 	except:
 		print(Fore.RED + "Invalid")
-		incSound()
+		 
 
 if which == "y":
 	clearConsole()
@@ -193,7 +176,7 @@ while turns == "y":
 	if startReady == "p":
 		while True:
 			try:
-				winsound.Beep(1500, 100)
+				  
 				flush_input()
 				difficulty = int(input("Choose a difficultly level: "))
 				if difficulty > 3 or difficulty < 1:
@@ -202,7 +185,7 @@ while turns == "y":
 			except ValueError:
 				print(Fore.RED + "")
 				print("Invalid, try again", Fore.GREEN + "")
-				incSound()
+				 
 	print()
 	clearConsole()
 
@@ -264,7 +247,7 @@ while turns == "y":
 #starts countdown sequence when something is typed 
 	print()	
 	flush_input()
-	winsound.Beep(1500, 100)
+	  
 	if startReady == "c":
 		difficulty = 4
 
@@ -346,20 +329,20 @@ while turns == "y":
 
 		
 	print(Fore.YELLOW + "3")
-	countdownSound()
+	 
 	print()
 	time.sleep(0.4)
 	print("2")
-	countdownSound()
+	 
 	print()
 	time.sleep(0.4)
 	print("1")
-	countdownSound()
+	 
 	print()
 	time.sleep(0.4)
 	print("Go!")
-	countdownSound()
-	countdownSound()
+	 
+	 
 	time.sleep(0.7)
 
 	if startReady == "p":
@@ -451,7 +434,7 @@ while turns == "y":
 		while True:
 			try:
 				print()
-				winsound.Beep(1500, 100)
+				  
 				flush_input()
 				if randStreak == 12:
 					choice = int(input(Fore.MAGENTA + "What operation has happened here: "))
@@ -479,7 +462,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.GREEN + " Correct!")
 				correct += 1
-				corSound()
+				 
 				print()
 				print(" +",gain,"points")
 				time.sleep(1.25)
@@ -488,7 +471,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.RED + " Incorrect")
 				incorrect += 1
-				incSound()
+				 
 				print()
 				print(" -", reduction,"points")
 				time.sleep(0.8)
@@ -503,7 +486,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.GREEN + " Correct!")
 				correct += 1
-				corSound()
+				 
 				print()
 				print(" +",gain,"points")
 				time.sleep(1.25)
@@ -512,7 +495,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.RED + " Incorrect")
 				incorrect += 1
-				incSound()
+				 
 				print()
 				print(" -", reduction,"points")
 				time.sleep(0.8)
@@ -527,7 +510,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.GREEN +" Correct!")
 				correct += 1
-				corSound()
+				 
 				print()
 				print(" +",gain,"points")
 				time.sleep(1.25)
@@ -536,7 +519,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.RED + " Incorrect")
 				incorrect += 1
-				incSound()
+				 
 				print()
 				print(" -", reduction,"points")
 				time.sleep(0.8)
@@ -551,7 +534,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.GREEN + " Correct!")
 				correct += 1
-				corSound()
+				 
 				print()
 				print(" +",gain,"points")
 				time.sleep(1.25)
@@ -560,7 +543,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.RED + " Incorrect")
 				incorrect += 1
-				incSound()
+				 
 				print()
 				print(" -", reduction,"points")
 				time.sleep(0.8)
@@ -573,7 +556,7 @@ while turns == "y":
 		elif choice == 6:
 			clearConsole()
 			print(Fore.RED + " Timed out!")
-			incSound()
+			 
 			print()
 			print(" - 10 points")
 			time.sleep(0.8)
@@ -586,7 +569,7 @@ while turns == "y":
 		elif choice == 7:
 			clearConsole()
 			print(Fore.RED + "Invalid")
-			incSound()
+			 
 			print()
 			print(" - 5 points")
 			time.sleep(1.25)
@@ -603,7 +586,7 @@ while turns == "y":
 	print()
 	while True:
 		try:
-			winsound.Beep(1500, 100)
+			  
 			flush_input()
 			viewPoints = input(Fore.MAGENTA + "View how you earned these points (y/n): ").lower()
 			if viewPoints == "y" or viewPoints == "n":
@@ -611,7 +594,7 @@ while turns == "y":
 			else:
 				viewPoints = int("f")
 		except:
-			incSound()
+			 
 			print(Fore.RED + "Invalid")
 	
 	if viewPoints == "y" and startReady != "p":
@@ -725,7 +708,7 @@ while turns == "y":
 									break
 								except:
 									print(Fore.RED + "Invalid try again")
-									incSound()
+									 
 									nameCheck.clear()
 							x.close()
 							f.close()
@@ -746,7 +729,7 @@ while turns == "y":
 									break
 								except:
 									print(Fore.RED + "Invalid try again")
-									incSound()
+									 
 									nameCheck.clear()
 							x.close()
 							f.close()
@@ -767,7 +750,7 @@ while turns == "y":
 								break
 							except:
 								print(Fore.RED + "Invalid try again")
-								incSound()
+								 
 								nameCheck.clear()
 						x.close()
 						f.close()
@@ -788,7 +771,7 @@ while turns == "y":
 							break
 						except:
 							print(Fore.RED + "Invalid try again")
-							incSound()
+							 
 							nameCheck.clear()
 					x.close()
 					f.close()
@@ -809,7 +792,7 @@ while turns == "y":
 						break
 					except:
 						print(Fore.RED + "Invalid try again")
-						incSound()
+						 
 						nameCheck.clear()
 				x.close()
 				f.close()
@@ -840,7 +823,7 @@ while turns == "y":
 								break
 							except:
 								print(Fore.RED + "Invalid try again")
-								incSound()
+								 
 								nameCheck.clear()
 						f.close()
 						x.close()
@@ -866,7 +849,7 @@ while turns == "y":
 								break
 							except:
 								print(Fore.RED + "Invalid try again")
-								incSound()
+								 
 								nameCheck.clear()
 						f.close()
 						x.close()
@@ -892,7 +875,7 @@ while turns == "y":
 							break
 						except:
 							print(Fore.RED + "Invalid try again")
-							incSound()
+							 
 							nameCheck.clear()
 					f.close()
 					x.close()
@@ -918,7 +901,7 @@ while turns == "y":
 						break
 					except:
 						print(Fore.RED + "Invalid try again")
-						incSound()
+						 
 						nameCheck.clear()
 				f.close()
 				x.close()
@@ -944,7 +927,7 @@ while turns == "y":
 					break
 				except:
 					print(Fore.RED + "Invalid try again")
-					incSound()
+					 
 					nameCheck.clear()
 			f.close()
 			x.close()
@@ -953,7 +936,7 @@ while turns == "y":
 	while True:
 		try:
 			flush_input()
-			winsound.Beep(1500, 100)
+			  
 			turns = input(Fore.YELLOW + "Go again (y/n): ").lower()
 			if turns == "y" or turns == "n":
 				break
@@ -961,7 +944,7 @@ while turns == "y":
 				turns = int("f")
 		except ValueError:
 			print(Fore.RED + "Invalid try again")
-			incSound()
+			 
 	if turns == "y":
 		print()
 		if incorrect < 1 and startReady != "p":	
@@ -1081,14 +1064,14 @@ print()
 
 while True:
 	try:
-		winsound.Beep(1500, 100)
+		  
 		which = input(Fore.MAGENTA + "View challenger leaderboard (y/n): ").lower()
 		if which == "y" or which == "n":
 			break
 		else:
 			which = int("f")
 	except:
-		incSound()
+		 
 		print(Fore.RED + "Invalid")
 
 print()
@@ -1099,14 +1082,14 @@ if which == "y":
 while True:
 	try:
 		flush_input()
-		winsound.Beep(1500, 100)
+		  
 		wipe = int(input(Fore.RED + "Do you wish to reset the leaderboard 1=yes 2=no: "))
 		if wipe > 2:
 			wipe = int("f")
 		break
 	except ValueError:
 		(Fore.RED + "Invalid try again")
-		incSound()
+		 
 
 # opens and wipes the leaderboard
 if wipe == 1:

@@ -1,9 +1,7 @@
 ﻿import time
 from colorama import init, Fore, Style
-from subprocess import call
 init()
-import os
-import winsound
+import os  
 clearconsole = lambda: os.system("cls")
 print(Fore.RED + "Hard maintainability: if someone takes your spot from the leaderboard,")
 print("then you will erased from the leaderboard entirely! ")
@@ -71,6 +69,6 @@ print()
 readScore5th.close()
 readName5th.close()
 
-winsound.Beep(1500, 100)
+  
 enter = input("Press enter to continue: ")
 clearconsole()

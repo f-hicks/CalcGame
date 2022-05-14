@@ -1,7 +1,6 @@
 import random
 import os
-import time
-import winsound
+import time  
 from colorama import init, Fore, Style
 init()
 
@@ -10,12 +9,7 @@ def flush_input():
         while msvcrt.kbhit():
             msvcrt.getch()
 
-def incSound():
-	winsound.Beep(300, 600)
-def corSound():
-	winsound.Beep(1200, 600)
-def countdownSound():
-	winsound.Beep(1500,100)
+
 clear = lambda: os.system("cls")
 def getSum(num1, num2):
 	return(num1 + num2)
@@ -42,7 +36,7 @@ time.sleep(0.2)
 while True:
 	try:
 		flush_input()
-		winsound.Beep(1500, 100)
+		  
 		difficulty = int(input("Choose a difficultly level to practice in (can be changed later): "))
 		if difficulty > 3 or difficulty < 1:
 			difficulty = int("f")
@@ -50,7 +44,7 @@ while True:
 	except ValueError:
 		print(Fore.RED + "")
 		print("Invalid, try again")
-		incSound()
+		 
 
 while answer != "end":
 	operationFinal = random.randint(0, 3)
@@ -102,7 +96,7 @@ while answer != "end":
 	print("4 = division (to nearest integer)")
 
 	flush_input()
-	winsound.Beep(1500, 100)
+	  
 	choice = input(Fore.MAGENTA + "What operation has happened here: ")
 
 	if choice == "1":
@@ -111,14 +105,14 @@ while answer != "end":
 		if choice == operationFinal:
 				clear()
 				print(Fore.GREEN + " Correct!")
-				corSound()
+				 
 				print()
 				time.sleep(1.25)
 
 		else:
 			clear()
 			print(Fore.RED + " Incorrect")
-			incSound()
+			 
 			print()
 			print(Fore.GREEN + "Correct answer:", corAns)
 			time.sleep(1.7)
@@ -130,14 +124,14 @@ while answer != "end":
 		if choice == operationFinal:
 			clear()
 			print(Fore.GREEN + " Correct!")
-			corSound()
+			 
 			print()
 			time.sleep(1.25)
 
 		else:
 			clear()
 			print(Fore.RED + " Incorrect")
-			incSound()
+			 
 			print()
 			print(Fore.GREEN + "Correct answer:", corAns)
 			time.sleep(1.7)
@@ -149,13 +143,13 @@ while answer != "end":
 		if choice == operationFinal:
 			clear()
 			print(Fore.GREEN +" Correct!")
-			corSound()
+			 
 			time.sleep(1.25)
 
 		else:
 			clear()
 			print(Fore.RED + " Incorrect")
-			incSound()
+			 
 			print()
 			print(Fore.GREEN + "Correct answer:", corAns)
 			time.sleep(1.7)
@@ -167,12 +161,12 @@ while answer != "end":
 		if choice == operationFinal:
 			clear()
 			print(Fore.GREEN + " Correct!")
-			corSound()
+			 
 			time.sleep(1.25)
 		else:
 			clear()
 			print(Fore.RED + " Incorrect")
-			incSound()
+			 
 			print()
 			print(Fore.GREEN + "Correct answer:", corAns)
 			time.sleep(1.7)
@@ -197,7 +191,7 @@ while answer != "end":
 		while True:
 			try:
 				flush_input()
-				winsound.Beep(1500, 100)
+				  
 				difficulty = int(input("Choose a difficultly level to practice in (can be changed later): ")) 
 				if difficulty > 3 or difficulty < 1:
 					difficulty = int("f")
@@ -205,12 +199,12 @@ while answer != "end":
 			except ValueError:
 				print(Fore.RED + "")
 				print("Invalid, try again")
-				incSound()
+				 
 	
 	else:
 		clear()
 		print(Fore.RED + " Invalid")
-		incSound()
+		 
 		print()
 		print(Fore.GREEN + "Correct answer:", corAns)
 		time.sleep(1.7)
