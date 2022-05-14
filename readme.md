@@ -5,5 +5,5 @@ Only works on Windows currently
 
 Installation
 - open the project directory in the cmd (right click > open in terminal)
-- type pip install requirements.txt
-- type python CalculatorGame.py
+- type pip install -r requirements.txt
+- type python CalculatorGame.py 
