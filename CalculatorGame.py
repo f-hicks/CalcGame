@@ -395,6 +395,23 @@ while turns == "y":
 			timer += 3
 			randStreak = 0
 
+# checks for / by 0 error and changes values of nums if this is true
+		if num1 == 0 or num2 == 0:
+			while num1 == 0 or num2 == 0:
+				operationFinal = random.randint(0, 3)
+				if difficulty == 1:
+					num1 = random.randint(25,100) 
+					num2 = random.randint(1,25) 
+				elif difficulty == 2:
+					num1 = random.randint(25, 150) 
+					num2 = random.randint(-25, 25)
+				elif difficulty == 3:
+					num1 = random.randint(-50, 150) 
+					num2 = random.randint(-100, -50)
+				else:
+					num1 = random.randint(-50, 150) 
+					num2 = random.randint(-100, -50)
+					
 	
 
 # creates an answer based on what random operation has been picked		
