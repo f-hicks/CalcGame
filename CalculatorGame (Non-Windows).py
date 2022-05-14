@@ -9,6 +9,7 @@ import time
 import random
 from colorama import init, Fore, Style
 from subprocess import call
+import platform
 init()
 
 
@@ -18,7 +19,10 @@ nameCheck = []
 
 
 #Creating the clearconsole function
-clearConsole = lambda: os.system('cls')
+if platform.system() == 'Windows':
+	clearConsole = lambda: os.system('cls')
+else:
+	clearConsole = lambda: os.system('clear')
 #prints the highest score
 clearConsole()
 print(Fore.YELLOW + "UPDATE(2.7):x2 Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.7.1)")
