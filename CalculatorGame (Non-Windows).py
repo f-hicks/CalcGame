@@ -638,19 +638,19 @@ while turns == "y":
 	scoreFile1st = open("1stScore.txt", "r")
 	potNewScore1st = float(scoreFile1st.readline())
 
-	scoreFileChallenger1st = open("ChallengerScore1st.txt", "r")
+	scoreFileChallenger1st = open("challengerScore1st.txt", "r")
 	potNewScoreChallenger1st = float(scoreFileChallenger1st.readline())
 
-	scoreFileChallenger2nd = open("ChallengerScore2nd.txt", "r")
+	scoreFileChallenger2nd = open("challengerScore2nd.txt", "r")
 	potNewScoreChallenger2nd = float(scoreFileChallenger2nd.readline())
 
-	scoreFileChallenger3rd = open("ChallengerScore3rd.txt", "r")
+	scoreFileChallenger3rd = open("challengerScore3rd.txt", "r")
 	potNewScoreChallenger3rd = float(scoreFileChallenger3rd.readline())
 
-	scoreFileChallenger4th = open("ChallengerScore4th.txt", "r")
+	scoreFileChallenger4th = open("challengerScore4th.txt", "r")
 	potNewScoreChallenger4th = float(scoreFileChallenger4th.readline())
 
-	scoreFileChallenger5th = open("ChallengerScore5th.txt", "r")
+	scoreFileChallenger5th = open("challengerScore5th.txt", "r")
 	potNewScoreChallenger5th = float(scoreFileChallenger5th.readline())
 
 
