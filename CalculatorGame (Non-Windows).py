@@ -17,10 +17,10 @@ init()
 
 nameCheck = []
 
-os = platform.system()
+oS = platform.system()
 
 #Creating the clearconsole function
-if os == 'Windows':
+if oS == 'Windows':
 	clearConsole = lambda: os.system('cls')
 else:
 	clearConsole = lambda: os.system('clear')
