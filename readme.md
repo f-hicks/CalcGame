@@ -6,6 +6,8 @@ Any platform other than Windows is in beta, but things should work as expected n
 Installation
 - download the install.bat for windows or install.sh for linux and save where you want the program to be stored
 - run install.bat / install.sh <br/>
+
 Updating 
+
 - download the update.bat for windows or install.sh for linux and save in the directory where the program is stored
 - run update.bat or install.sh
