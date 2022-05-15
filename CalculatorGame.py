@@ -354,7 +354,10 @@ while turns == "y":
 		tries = 0
 		points = 0
 		clearConsole()
-		call(["python", "practice.py"])
+			try:
+				call(["python", "practice.py"])
+			except FileNotFoundError:
+				call(["python3", "practice.py"])
 
 
 
