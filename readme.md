@@ -1,6 +1,6 @@
 
 A console calculation game written in python that includes power-ups, streaks, points and other cool things!
-Only works on Windows currently 
+any  platform other than Windows is in beta, so bugs may occur
 
 
 Installation
