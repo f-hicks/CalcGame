@@ -143,7 +143,7 @@ while True:
 
 if which == "y":
 	clearConsole()
-		try:
+	try:
 		call(["python", "chalLeader.py"])
 	except FileNotFoundError:
 		call(["python3", "chalLeader.py"])
