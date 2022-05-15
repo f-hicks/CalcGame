@@ -5,9 +5,13 @@ from colorama import init, Fore, Style
 init()
 
 def flush_input():
+    try:
         import msvcrt
         while msvcrt.kbhit():
             msvcrt.getch()
+    except ImportError:
+        import sys, termios    #for linux/unix
+        termios.tcflush(sys.stdin, termios.TCIOFLUSH)
 
 
 clear = lambda: os.system("cls")
@@ -36,7 +40,6 @@ time.sleep(0.2)
 while True:
 	try:
 		flush_input()
-		  
 		difficulty = int(input("Choose a difficultly level to practice in (can be changed later): "))
 		if difficulty > 3 or difficulty < 1:
 			difficulty = int("f")
@@ -96,7 +99,6 @@ while answer != "end":
 	print("4 = division (to nearest integer)")
 
 	flush_input()
-	  
 	choice = input(Fore.MAGENTA + "What operation has happened here: ")
 
 	if choice == "1":

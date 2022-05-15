@@ -12,6 +12,14 @@ from subprocess import call
 import platform
 init()
 
+def flush_input():
+    try:
+        import msvcrt
+        while msvcrt.kbhit():
+            msvcrt.getch()
+    except ImportError:
+        import sys, termios    #for linux/unix
+        termios.tcflush(sys.stdin, termios.TCIOFLUSH)
 
 
 
@@ -131,7 +139,7 @@ print()
 
 while True:
 	try:
-		  
+		flush_input()
 		which = input(Fore.MAGENTA + "View challenger leaderboard (y/n): ").lower()
 		if which == "y" or which == "n":
 			break
@@ -182,7 +190,7 @@ while turns == "y":
 		while True:
 			try:
 				  
-				
+				flush_input()
 				difficulty = int(input("Choose a difficultly level: "))
 				if difficulty > 3 or difficulty < 1:
 					difficulty = int("f")
@@ -255,7 +263,7 @@ while turns == "y":
 	  
 	if startReady == "c":
 		difficulty = 4
-
+	flush_input()
 	startReady = input(Fore.YELLOW + "Press enter to play normally (normal mode) or type in one of the above options: ").lower()
 	clearConsole()
 	if startReady == "c" and streak == 1:
@@ -440,7 +448,7 @@ while turns == "y":
 			try:
 				print()
 				  
-				
+				flush_input()
 				if randStreak == 12:
 					choice = int(input(Fore.MAGENTA + "What operation has happened here: "))
 				else:
@@ -592,7 +600,7 @@ while turns == "y":
 	while True:
 		try:
 			  
-			
+			flush_input()
 			viewPoints = input(Fore.MAGENTA + "View how you earned these points (y/n): ").lower()
 			if viewPoints == "y" or viewPoints == "n":
 				break
@@ -617,7 +625,7 @@ while turns == "y":
 		time.sleep(0.1)
 		print()
 		print(Fore.YELLOW + "And so earned a total of",points,"points")
-		
+		flush_input()
 		enter = input("Press enter to continue: ")
 		clearConsole()
 
@@ -702,7 +710,7 @@ while turns == "y":
 							while True:
 								try:
 						
-									
+									flush_input()
 									newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
 									
 									for letters in newName:
@@ -724,7 +732,7 @@ while turns == "y":
 							x = open("ChallengerName2nd.txt", "w")
 							while True:
 								try:
-									
+									flush_input()
 									newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
 									for letters in newName:
 										nameCheck.append(letters)
@@ -745,7 +753,7 @@ while turns == "y":
 						x = open("ChallengerName3rd.txt", "w")
 						while True:
 							try:
-								
+								flush_input()
 								newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
 								for letters in newName:
 									nameCheck.append(letters)
@@ -766,7 +774,7 @@ while turns == "y":
 					x = open("ChallengerName4th.txt", "w")
 					while True:
 						try:
-							
+							flush_input()
 							newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
 							for letters in newName:
 								nameCheck.append(letters)
@@ -787,7 +795,7 @@ while turns == "y":
 				x = open("ChallengerName5th.txt", "w")				
 				while True:
 					try:
-						
+						flush_input()
 						newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
 						for letters in newName:
 							nameCheck.append(letters)
@@ -817,7 +825,7 @@ while turns == "y":
 						while True:
 							try:
 								
-								
+								flush_input()
 								newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
 								
 								for letters in newName:
@@ -843,7 +851,7 @@ while turns == "y":
 						while True:
 							try:
 								
-								
+								flush_input()
 								newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
 								
 								for letters in newName:
@@ -869,7 +877,7 @@ while turns == "y":
 					while True:
 						try:
 							
-							
+							flush_input()
 							newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
 							
 							for letters in newName:
@@ -895,7 +903,7 @@ while turns == "y":
 				while True:
 					try:
 						
-						
+						flush_input()
 						newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
 						
 						for letters in newName:
@@ -921,7 +929,7 @@ while turns == "y":
 			while True:
 				try:
 					
-					
+					flush_input()
 					newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
 					
 					for letters in newName:
@@ -941,7 +949,7 @@ while turns == "y":
 	while True:
 		try:
 			
-			  
+			flush_input()
 			turns = input(Fore.YELLOW + "Go again (y/n): ").lower()
 			if turns == "y" or turns == "n":
 				break
@@ -968,6 +976,7 @@ while turns == "y":
 		print("But in doing so, it removes streak stacks. But after ending your pracice session, you can change your difficulty again")
 		print()
 		time.sleep(0.2)
+		flush_input()
 		enter = input("Press enter to continue")
 		if difficulty == "easy":
 			difficulty = 1
@@ -1069,7 +1078,7 @@ print()
 
 while True:
 	try:
-		  
+		flush_input()
 		which = input(Fore.MAGENTA + "View challenger leaderboard (y/n): ").lower()
 		if which == "y" or which == "n":
 			break
@@ -1090,7 +1099,7 @@ if which == "y":
 while True:
 	try:
 		
-		  
+		flush_input()  
 		wipe = int(input(Fore.RED + "Do you wish to reset the leaderboard 1=yes 2=no: "))
 		if wipe > 2:
 			wipe = int("f")
