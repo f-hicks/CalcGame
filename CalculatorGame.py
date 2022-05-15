@@ -12,14 +12,6 @@ from subprocess import call
 import platform
 init()
 
-def flush_input():
-    try:
-        import msvcrt
-        while msvcrt.kbhit():
-            msvcrt.getch()
-    except ImportError:
-        import sys, termios    #for linux/unix
-        termios.tcflush(sys.stdin, termios.TCIOFLUSH)
 
 
 
@@ -114,7 +106,7 @@ time.sleep(0.1)
 print()
 readScore5th.close()
 readName5th.close()
-readDifficulty5th.close() 
+readDifficulty5th.close()
 
 
 
@@ -132,14 +124,14 @@ time.sleep(0.3)
 print()
 print("Score as high as you can in 5 rounds. Also changing the difficulty changes how hard each question is. ")
 time.sleep(0.3)
-print()	
+print()
 print(Fore.CYAN + "If you answer all the questions correctly in a game, you will gain and lose more points next game (streak multiplier).")
 print("And also activate streak powers which helps you in various ways (mostly)")
 print()
 
 while True:
 	try:
-		flush_input()
+
 		which = input(Fore.MAGENTA + "View challenger leaderboard (y/n): ").lower()
 		if which == "y" or which == "n":
 			break
@@ -147,7 +139,7 @@ while True:
 			which = int("f")
 	except:
 		print(Fore.RED + "Invalid")
-		 
+
 
 if which == "y":
 	clearConsole()
@@ -161,21 +153,21 @@ streak = 1
 startReady = "p"
 while turns == "y":
 	tries = 6
-	
 
-# creates each operation to be used multiple times. 
+
+# creates each operation to be used multiple times.
 	def getSum(num1, num2):
 		return(num1 + num2)
 
 	def getDifference(num1, num2):
 		return(num1 - num2)
-	
+
 	def getProduct(num1, num2):
 		return(num1 * num2)
 
 	def getQuotient(num1, num2):
 		return(num1 / num2)
-	
+
 	clearConsole()
 	if startReady == "p":
 		print(Fore. GREEN + "1 = Easy")
@@ -189,8 +181,8 @@ while turns == "y":
 	if startReady == "p":
 		while True:
 			try:
-				  
-				flush_input()
+
+
 				difficulty = int(input("Choose a difficultly level: "))
 				if difficulty > 3 or difficulty < 1:
 					difficulty = int("f")
@@ -198,12 +190,12 @@ while turns == "y":
 			except ValueError:
 				print(Fore.RED + "")
 				print("Invalid, try again", Fore.GREEN + "")
-				 
+
 	print()
 	clearConsole()
 
-# determines the reduction and gain of points		
-	points = 500 * streak 
+# determines the reduction and gain of points
+	points = 500 * streak
 	reduction = 50 * streak
 	gain = 75 * streak
 
@@ -257,13 +249,13 @@ while turns == "y":
 	incorrect = 0
 	randStreak = 0
 
-#starts countdown sequence when something is typed 
-	print()	
-	
-	  
+#starts countdown sequence when something is typed
+	print()
+
+
 	if startReady == "c":
 		difficulty = 4
-	flush_input()
+
 	startReady = input(Fore.YELLOW + "Press enter to play normally (normal mode) or type in one of the above options: ").lower()
 	clearConsole()
 	if startReady == "c" and streak == 1:
@@ -340,50 +332,53 @@ while turns == "y":
 		print()
 		time.sleep(2.5)
 
-		
+
 	print(Fore.YELLOW + "3")
-	 
+
 	print()
 	time.sleep(0.4)
 	print("2")
-	 
+
 	print()
 	time.sleep(0.4)
 	print("1")
-	 
+
 	print()
 	time.sleep(0.4)
 	print("Go!")
-	 
-	 
+
+
 	time.sleep(0.7)
 
 	if startReady == "p":
 		tries = 0
 		points = 0
 		clearConsole()
-		call(["python", "practice.py"])
+		try:
+			call(["python", "practice.py"])
+		except FileNotFoundError:
+			call(["python3", "practice.py"])
 
-	
-	
+
+
 
 # determines number range based on difficultly
 	while tries > 1:
 		operationFinal = random.randint(0, 3)
 		if difficulty == 1:
-			num1 = random.randint(25,100) 
-			num2 = random.randint(1,25) 
+			num1 = random.randint(25,100)
+			num2 = random.randint(1,25)
 			timer = 11
 		elif difficulty == 2:
-			num1 = random.randint(25, 150) 
+			num1 = random.randint(25, 150)
 			num2 = random.randint(-25, 25)
-			timer = 8.5 
+			timer = 8.5
 		elif difficulty == 3:
-			num1 = random.randint(-50, 150) 
+			num1 = random.randint(-50, 150)
 			num2 = random.randint(-100, -50)
 			timer = 6
 		else:
-			num1 = random.randint(-50, 150) 
+			num1 = random.randint(-50, 150)
 			num2 = random.randint(-100, -50)
 			timer = 4
 
@@ -396,21 +391,21 @@ while turns == "y":
 			while num1 == 0 or num2 == 0:
 				operationFinal = random.randint(0, 3)
 				if difficulty == 1:
-					num1 = random.randint(25,100) 
-					num2 = random.randint(1,25) 
+					num1 = random.randint(25,100)
+					num2 = random.randint(1,25)
 				elif difficulty == 2:
-					num1 = random.randint(25, 150) 
+					num1 = random.randint(25, 150)
 					num2 = random.randint(-25, 25)
 				elif difficulty == 3:
-					num1 = random.randint(-50, 150) 
+					num1 = random.randint(-50, 150)
 					num2 = random.randint(-100, -50)
 				else:
-					num1 = random.randint(-50, 150) 
+					num1 = random.randint(-50, 150)
 					num2 = random.randint(-100, -50)
-					
-	
 
-# creates an answer based on what random operation has been picked		
+
+
+# creates an answer based on what random operation has been picked
 		if operationFinal == 0:
 			corAns = "addition"
 			answer = getSum(num1, num2)
@@ -423,32 +418,32 @@ while turns == "y":
 		elif operationFinal == 3:
 			corAns = "division"
 			answer = getQuotient(num1, num2)
-			
+
 		answer = round(answer)
-	
-	
-#outputs all of the nessesery info to the user and also decreases the remaining rounds	
+
+
+#outputs all of the nessesery info to the user and also decreases the remaining rounds
 		tries -= 1
 		print(Fore.YELLOW)
 		clearConsole()
 		print(tries,"question(s) remaining")
 		print()
 		print("Your current amount of points:",points)
-		print(Fore.CYAN + "------------------------------------------------------------------") 
+		print(Fore.CYAN + "------------------------------------------------------------------")
 		print(Fore.YELLOW + "The numbers",num1, "and",  num2, "turn into the number", answer)
 		print()
 		print(Fore.CYAN + "1 = addition")
 		print("2 = subtraction")
 		print("3 = multiplication")
 		print("4 = division (to nearest integer)")
-		
 
-#asks the user to guess which operation has happened (error handling in place)	
+
+#asks the user to guess which operation has happened (error handling in place)
 		while True:
 			try:
 				print()
-				  
-				flush_input()
+
+
 				if randStreak == 12:
 					choice = int(input(Fore.MAGENTA + "What operation has happened here: "))
 				else:
@@ -456,7 +451,7 @@ while turns == "y":
 				if choice > 4 or choice < 1:
 					choice = int("f")
 				break
-			except ValueError: 
+			except ValueError:
 				print(Fore.RED + "Invalid")
 				time.sleep(0.5)
 				choice = 7
@@ -468,14 +463,14 @@ while turns == "y":
 				time.sleep(0.5)
 				break
 
-#checks whether the user is correct		
+#checks whether the user is correct
 		if choice == 1:
 			choice = choice - 1
 			if choice == operationFinal:
 				clearConsole()
 				print(Fore.GREEN + " Correct!")
 				correct += 1
-				 
+
 				print()
 				print(" +",gain,"points")
 				time.sleep(1.25)
@@ -484,7 +479,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.RED + " Incorrect")
 				incorrect += 1
-				 
+
 				print()
 				print(" -", reduction,"points")
 				time.sleep(0.8)
@@ -499,7 +494,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.GREEN + " Correct!")
 				correct += 1
-				 
+
 				print()
 				print(" +",gain,"points")
 				time.sleep(1.25)
@@ -508,7 +503,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.RED + " Incorrect")
 				incorrect += 1
-				 
+
 				print()
 				print(" -", reduction,"points")
 				time.sleep(0.8)
@@ -516,14 +511,14 @@ while turns == "y":
 				print(Fore.GREEN + "Correct answer:", corAns)
 				time.sleep(1.7)
 				points = points - reduction
-		
+
 		elif choice == 3:
 			choice = choice - 1
 			if choice == operationFinal:
 				clearConsole()
 				print(Fore.GREEN +" Correct!")
 				correct += 1
-				 
+
 				print()
 				print(" +",gain,"points")
 				time.sleep(1.25)
@@ -532,7 +527,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.RED + " Incorrect")
 				incorrect += 1
-				 
+
 				print()
 				print(" -", reduction,"points")
 				time.sleep(0.8)
@@ -540,14 +535,14 @@ while turns == "y":
 				print(Fore.GREEN + "Correct answer:", corAns)
 				time.sleep(1.7)
 				points = points - reduction
-		
+
 		elif choice == 4:
 			choice = choice - 1
 			if choice == operationFinal:
 				clearConsole()
 				print(Fore.GREEN + " Correct!")
 				correct += 1
-				 
+
 				print()
 				print(" +",gain,"points")
 				time.sleep(1.25)
@@ -556,7 +551,7 @@ while turns == "y":
 				clearConsole()
 				print(Fore.RED + " Incorrect")
 				incorrect += 1
-				 
+
 				print()
 				print(" -", reduction,"points")
 				time.sleep(0.8)
@@ -564,12 +559,12 @@ while turns == "y":
 				print(Fore.GREEN + "Correct answer:", corAns)
 				time.sleep(1.7)
 				points = points - reduction
-	
+
 
 		elif choice == 6:
 			clearConsole()
 			print(Fore.RED + " Timed out!")
-			 
+
 			print()
 			print(" - 10 points")
 			time.sleep(0.8)
@@ -582,34 +577,34 @@ while turns == "y":
 		elif choice == 7:
 			clearConsole()
 			print(Fore.RED + "Invalid")
-			 
+
 			print()
 			print(" - 5 points")
 			time.sleep(1.25)
 			points = points - (5 * streak)
 			other2 +=1
 
-		
-	
 
 
-#displays the final amount of points and checks if the user is on hard difficlulty for the leaderboard. 			
+
+
+#displays the final amount of points and checks if the user is on hard difficlulty for the leaderboard.
 	clearConsole()
 	print(Fore.YELLOW + "You earned",points,"Points! Well done")
 	print()
 	while True:
 		try:
-			  
-			flush_input()
+
+
 			viewPoints = input(Fore.MAGENTA + "View how you earned these points (y/n): ").lower()
 			if viewPoints == "y" or viewPoints == "n":
 				break
 			else:
 				viewPoints = int("f")
 		except:
-			 
+
 			print(Fore.RED + "Invalid")
-	
+
 	if viewPoints == "y" and startReady != "p":
 		clearConsole()
 		print(Fore.YELLOW + "Started with:",startingPoints)
@@ -625,7 +620,7 @@ while turns == "y":
 		time.sleep(0.1)
 		print()
 		print(Fore.YELLOW + "And so earned a total of",points,"points")
-		flush_input()
+
 		enter = input("Press enter to continue: ")
 		clearConsole()
 
@@ -636,7 +631,7 @@ while turns == "y":
 		clearConsole()
 	clearConsole()
 	incorrect = incorrect + other1 + other2
-		
+
 
 #opens all the text files storing the high score details and assigns the content of each to a different variable
 	scoreFile5th = open("5thScore.txt", "r")
@@ -671,7 +666,7 @@ while turns == "y":
 
 
 
-		
+
 
 	scoreFile5th.close()
 	scoreFile4th.close()
@@ -709,19 +704,19 @@ while turns == "y":
 							x = open("ChallengerName1st.txt", "w")
 							while True:
 								try:
-						
-									flush_input()
+
+
 									newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
-									
+
 									for letters in newName:
 										nameCheck.append(letters)
 									if len(nameCheck) >= 11:
-										newName = int("f") 
+										newName = int("f")
 									x.write(newName)
 									break
 								except:
 									print(Fore.RED + "Invalid try again")
-									 
+
 									nameCheck.clear()
 							x.close()
 							f.close()
@@ -732,17 +727,17 @@ while turns == "y":
 							x = open("ChallengerName2nd.txt", "w")
 							while True:
 								try:
-									flush_input()
+
 									newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
 									for letters in newName:
 										nameCheck.append(letters)
 									if len(nameCheck) >= 11:
-										newName = int("f") 
+										newName = int("f")
 									x.write(newName)
 									break
 								except:
 									print(Fore.RED + "Invalid try again")
-									 
+
 									nameCheck.clear()
 							x.close()
 							f.close()
@@ -753,17 +748,17 @@ while turns == "y":
 						x = open("ChallengerName3rd.txt", "w")
 						while True:
 							try:
-								flush_input()
+
 								newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
 								for letters in newName:
 									nameCheck.append(letters)
 								if len(nameCheck) >= 11:
-									newName = int("f") 
+									newName = int("f")
 								x.write(newName)
 								break
 							except:
 								print(Fore.RED + "Invalid try again")
-								 
+
 								nameCheck.clear()
 						x.close()
 						f.close()
@@ -774,17 +769,17 @@ while turns == "y":
 					x = open("ChallengerName4th.txt", "w")
 					while True:
 						try:
-							flush_input()
+
 							newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
 							for letters in newName:
 								nameCheck.append(letters)
 							if len(nameCheck) >= 11:
-								newName = int("f") 
+								newName = int("f")
 							x.write(newName)
 							break
 						except:
 							print(Fore.RED + "Invalid try again")
-							 
+
 							nameCheck.clear()
 					x.close()
 					f.close()
@@ -792,20 +787,20 @@ while turns == "y":
 				points = str(points)
 				f = open("ChallengerScore5th.txt", "w")
 				f.write(points)
-				x = open("ChallengerName5th.txt", "w")				
+				x = open("ChallengerName5th.txt", "w")
 				while True:
 					try:
-						flush_input()
+
 						newName = input(Fore.MAGENTA + "Enter your name for the CHALLENGER leaderboard (must be < 11 char): ")
 						for letters in newName:
 							nameCheck.append(letters)
 						if len(nameCheck) >= 11:
-							newName = int("f") 
+							newName = int("f")
 						x.write(newName)
 						break
 					except:
 						print(Fore.RED + "Invalid try again")
-						 
+
 						nameCheck.clear()
 				x.close()
 				f.close()
@@ -824,19 +819,19 @@ while turns == "y":
 						y.write(difficulty)
 						while True:
 							try:
-								
-								flush_input()
+
+
 								newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
-								
+
 								for letters in newName:
 									nameCheck.append(letters)
 								if len(nameCheck) >= 11:
-									newName = int("f") 
+									newName = int("f")
 								x.write(newName)
 								break
 							except:
 								print(Fore.RED + "Invalid try again")
-								 
+
 								nameCheck.clear()
 						f.close()
 						x.close()
@@ -850,19 +845,19 @@ while turns == "y":
 						y.write(difficulty)
 						while True:
 							try:
-								
-								flush_input()
+
+
 								newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
-								
+
 								for letters in newName:
 									nameCheck.append(letters)
 								if len(nameCheck) >= 11:
-									newName = int("f") 
+									newName = int("f")
 								x.write(newName)
 								break
 							except:
 								print(Fore.RED + "Invalid try again")
-								 
+
 								nameCheck.clear()
 						f.close()
 						x.close()
@@ -876,19 +871,19 @@ while turns == "y":
 					y.write(difficulty)
 					while True:
 						try:
-							
-							flush_input()
+
+
 							newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
-							
+
 							for letters in newName:
 								nameCheck.append(letters)
 							if len(nameCheck) >= 11:
-								newName = int("f") 
+								newName = int("f")
 							x.write(newName)
 							break
 						except:
 							print(Fore.RED + "Invalid try again")
-							 
+
 							nameCheck.clear()
 					f.close()
 					x.close()
@@ -902,19 +897,19 @@ while turns == "y":
 				y.write(difficulty)
 				while True:
 					try:
-						
-						flush_input()
+
+
 						newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
-						
+
 						for letters in newName:
 							nameCheck.append(letters)
 						if len(nameCheck) >= 11:
-							newName = int("f") 
+							newName = int("f")
 						x.write(newName)
 						break
 					except:
 						print(Fore.RED + "Invalid try again")
-						 
+
 						nameCheck.clear()
 				f.close()
 				x.close()
@@ -928,28 +923,28 @@ while turns == "y":
 			y.write(difficulty)
 			while True:
 				try:
-					
-					flush_input()
+
+
 					newName = input(Fore.MAGENTA + "Enter your name for the leaderboard (must be < 11 char): ")
-					
+
 					for letters in newName:
 						nameCheck.append(letters)
 					if len(nameCheck) >= 11:
-						newName = int("f") 
+						newName = int("f")
 					x.write(newName)
 					break
 				except:
 					print(Fore.RED + "Invalid try again")
-					 
+
 					nameCheck.clear()
 			f.close()
 			x.close()
 			y.close()
-			
+
 	while True:
 		try:
-			
-			flush_input()
+
+
 			turns = input(Fore.YELLOW + "Go again (y/n): ").lower()
 			if turns == "y" or turns == "n":
 				break
@@ -957,10 +952,10 @@ while turns == "y":
 				turns = int("f")
 		except ValueError:
 			print(Fore.RED + "Invalid try again")
-			 
+
 	if turns == "y":
 		print()
-		if incorrect < 1 and startReady != "p":	
+		if incorrect < 1 and startReady != "p":
 			streak += 1
 			incorrect = 0
 		if incorrect > 0 or startReady == "p":
@@ -976,7 +971,6 @@ while turns == "y":
 		print("But in doing so, it removes streak stacks. But after ending your pracice session, you can change your difficulty again")
 		print()
 		time.sleep(0.2)
-		flush_input()
 		enter = input("Press enter to continue")
 		if difficulty == "easy":
 			difficulty = 1
@@ -987,7 +981,7 @@ while turns == "y":
 		else:
 			difficulty = 4
 
-	
+
 	#displays the new leaderboard
 
 clearConsole()
@@ -1070,7 +1064,7 @@ time.sleep(0.1)
 print()
 readScore5th.close()
 readName5th.close()
-readDifficulty5th.close() 
+readDifficulty5th.close()
 time.sleep(1)
 print(Fore.YELLOW + "If you scored high enough, you should be able to view your score here")
 print()
@@ -1078,14 +1072,14 @@ print()
 
 while True:
 	try:
-		flush_input()
+
 		which = input(Fore.MAGENTA + "View challenger leaderboard (y/n): ").lower()
 		if which == "y" or which == "n":
 			break
 		else:
 			which = int("f")
 	except:
-		 
+
 		print(Fore.RED + "Invalid")
 
 print()
@@ -1098,15 +1092,15 @@ if which == "y":
 
 while True:
 	try:
-		
-		flush_input()  
+
+
 		wipe = int(input(Fore.RED + "Do you wish to reset the leaderboard 1=yes 2=no: "))
 		if wipe > 2:
 			wipe = int("f")
 		break
 	except ValueError:
 		(Fore.RED + "Invalid try again")
-		 
+
 
 # opens and wipes the leaderboard
 if wipe == 1:
@@ -1135,7 +1129,7 @@ if wipe == 1:
 	readNameChallenger4th = open("challengerName4th.txt", "w")
 	readScoreChallenger5th = open("challengerScore5th.txt", "w")
 	readNameChallenger5th = open("challengerName5th.txt", "w")
-	
+
 	readScore5th.write("0")
 	readScore4th.write("0")
 	readScore3rd.write("0")
@@ -1146,8 +1140,8 @@ if wipe == 1:
 	readScoreChallenger3rd.write("0")
 	readScoreChallenger4th.write("0")
 	readScoreChallenger5th.write("0")
-	
-	readName5th.write("")	
+
+	readName5th.write("")
 	readName4th.write("")
 	readName3rd.write("")
 	readName2nd.write("")
@@ -1157,13 +1151,13 @@ if wipe == 1:
 	readNameChallenger3rd.write("")
 	readNameChallenger4th.write("")
 	readNameChallenger5th.write("")
-	
+
 	readDifficulty5th.write("")
 	readDifficulty4th.write("")
 	readDifficulty3rd.write("")
 	readDifficulty2nd.write("")
 	readDifficulty1st.write("")
-	
+
 	readScore5th.close()
 	readName5th.close()
 	readDifficulty5th.close()
@@ -1171,7 +1165,7 @@ if wipe == 1:
 	readName4th.close()
 	readDifficulty4th.close()
 	readScore3rd.close()
-	readName3rd.close()	
+	readName3rd.close()
 	readDifficulty3rd.close()
 	readScore2nd.close()
 	readName2nd.close()
@@ -1196,12 +1190,3 @@ if wipe == 1:
 clearConsole()
 print(Fore.YELLOW + "Ending session")
 sys.exit()
-
-	
-
-
-
-	
-
-	
-	 
