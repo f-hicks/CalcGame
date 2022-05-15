@@ -1,5 +1,4 @@
 inputimeout
 colorama
-msvcrt
 #winsound and subprocess are inbuilt into python
 #winsound only on windows ofc
