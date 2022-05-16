@@ -2,6 +2,9 @@
 CHANGELOG (added as of 1.8)
 *****************************
 
+2.7.3
+	timing changes for ease of access
+
 2.7.2:
 	removed win-sound
 	device support (in beta):
