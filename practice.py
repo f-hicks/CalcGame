@@ -17,9 +17,9 @@ def flush_input():
 oS = platform.system()
 
 if oS == 'Windows':
-	clearConsole = lambda: os.system('cls')
+	clear = lambda: os.system('cls')
 else:
-	clearConsole = lambda: os.system('clear')
+	clear = lambda: os.system('clear')
 	
 def getSum(num1, num2):
 	return(num1 + num2)
