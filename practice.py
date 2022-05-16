@@ -13,6 +13,8 @@ def flush_input():
         import sys, termios    #for linux/unix
         termios.tcflush(sys.stdin, termios.TCIOFLUSH)
 
+oS = platform.system()
+
 if oS == 'Windows':
 	clearConsole = lambda: os.system('cls')
 else:
