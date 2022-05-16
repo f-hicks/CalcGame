@@ -1,4 +1,3 @@
 inputimeout
 colorama
-#winsound and subprocess are inbuilt into python
-#winsound only on windows ofc
+#subprocess is inbuilt into python
