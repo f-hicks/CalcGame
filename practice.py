@@ -13,8 +13,11 @@ def flush_input():
         import sys, termios    #for linux/unix
         termios.tcflush(sys.stdin, termios.TCIOFLUSH)
 
-
-clear = lambda: os.system("cls")
+if oS == 'Windows':
+	clearConsole = lambda: os.system('cls')
+else:
+	clearConsole = lambda: os.system('clear')
+	
 def getSum(num1, num2):
 	return(num1 + num2)
 
