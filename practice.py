@@ -2,6 +2,7 @@ import random
 import os
 import time  
 from colorama import init, Fore, Style
+import platform
 init()
 
 def flush_input():
