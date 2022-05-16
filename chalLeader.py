@@ -1,8 +1,8 @@
 ﻿import time
 from colorama import init, Fore, Style
+import platform
 init()
 import os  
-clearconsole = lambda: os.system("cls")
 print(Fore.RED + "Hard maintainability: if someone takes your spot from the leaderboard,")
 print("then you will erased from the leaderboard entirely! ")
 print()
@@ -71,4 +71,3 @@ readName5th.close()
 
   
 enter = input("Press enter to continue: ")
-clearconsole()
