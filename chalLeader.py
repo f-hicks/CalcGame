@@ -1,6 +1,5 @@
 ﻿import time
 from colorama import init, Fore, Style
-import platform
 init()
 import os  
 print(Fore.RED + "Hard maintainability: if someone takes your spot from the leaderboard,")
