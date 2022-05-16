@@ -6,6 +6,7 @@ CHANGELOG (added as of 1.8)
 	removed win-sound
 	device support (in beta):
 		additional devices supported, check requirements.txt
+
 2.7.1:
 	bug fixes:
 		rare streak  power (timer) stacking

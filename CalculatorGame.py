@@ -479,6 +479,7 @@ while turns == "y":
 				correct += 1
 
 				print()
+				time.sleep(0.2)
 				print(" +",gain,"points")
 				time.sleep(1.25)
 				points = points + gain
@@ -488,6 +489,7 @@ while turns == "y":
 				incorrect += 1
 
 				print()
+				time.sleep(0.2)
 				print(" -", reduction,"points")
 				time.sleep(0.8)
 				print()
@@ -503,6 +505,7 @@ while turns == "y":
 				correct += 1
 
 				print()
+				time.sleep(0.2)
 				print(" +",gain,"points")
 				time.sleep(1.25)
 				points = points + gain
@@ -512,6 +515,7 @@ while turns == "y":
 				incorrect += 1
 
 				print()
+				time.sleep(0.2)
 				print(" -", reduction,"points")
 				time.sleep(0.8)
 				print()
@@ -527,6 +531,7 @@ while turns == "y":
 				correct += 1
 
 				print()
+				time.sleep(0.2)
 				print(" +",gain,"points")
 				time.sleep(1.25)
 				points = points + gain
@@ -536,6 +541,7 @@ while turns == "y":
 				incorrect += 1
 
 				print()
+				time.sleep(0.2)
 				print(" -", reduction,"points")
 				time.sleep(0.8)
 				print()
@@ -551,6 +557,7 @@ while turns == "y":
 				correct += 1
 
 				print()
+				time.sleep(0.2)
 				print(" +",gain,"points")
 				time.sleep(1.25)
 				points = points + gain
@@ -560,6 +567,7 @@ while turns == "y":
 				incorrect += 1
 
 				print()
+				time.sleep(0.2)
 				print(" -", reduction,"points")
 				time.sleep(0.8)
 				print()
@@ -573,6 +581,7 @@ while turns == "y":
 			print(Fore.RED + " Timed out!")
 
 			print()
+			time.sleep(0.2)
 			print(" - 10 points")
 			time.sleep(0.8)
 			print()
@@ -586,6 +595,7 @@ while turns == "y":
 			print(Fore.RED + "Invalid")
 
 			print()
+			time.sleep(0.2)
 			print(" - 5 points")
 			time.sleep(1.25)
 			points = points - (5 * streak)
