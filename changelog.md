@@ -2,6 +2,15 @@
 CHANGELOG (added as of 1.8)
 *****************************
 
+2.8:
+	NEW, corrupt streak powers, have an equal chance of being obtained as an epic streak power
+		The two streak powers are:
+			halves your timeout time
+			reduces your streak by a set amount, random between 1 and your current streak - 1
+	NEW, your current streak will be shown durng a game in normal or challenger difficulty.
+	Bug fixes:
+		issue with answer being 2 operations (div and multi) when either number = 1, so neither number can = 1 now.
+
 2.7.3
 	timing changes for ease of access
 

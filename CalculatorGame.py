@@ -90,7 +90,7 @@ readScore4th = open("4thScore.txt", "r")
 readName4th = open("4thName.txt", "r")
 readDifficulty4th = open("4thDifficulty.txt", "r")
 readScoreVari4th = readScore4th.read()
-readNameVari4th = readName4th.read()
+readNameVari4th = readName4th.read()	
 readDifficultyVari4th = readDifficulty4th.read()
 print("Rank no.4" + Fore.WHITE + "│", readScoreVari4th, "point(s) by", readNameVari4th,"- Difficulty:",readDifficultyVari4th)
 print(Fore.WHITE + "─────────│─────────────────────────────────────────────────────────────────│")
@@ -281,16 +281,16 @@ while turns == "y":
 		print(Fore.RED + "Access denied due to your streak being too high")
 
 	if streak > 1:
-		randStreak = random.randint(1, 20) #0, 20
+		randStreak = random.randint(13, 14) #1, 20
 		if randStreak > 0 and randStreak < 7:
 			print(Fore.GREEN + "You found a common streak power!")
 			print()
 			randC = random.randint(1,2)
 			if randC == 1:
-				print("+ 50 points per each correct answer") #10
+				print("+ 50 points per each correct answer") 
 				gain += 50
 			elif randC == 2:
-				print("+ 15% points per each correct answer") #5%
+				print("+ 15% points per each correct answer") 
 				gain += (gain / 100) * 15
 
 		elif randStreak > 6 and randStreak < 10:
@@ -301,7 +301,7 @@ while turns == "y":
 				print("Your streak is increased by one")
 				streak += 1
 			elif randR == 2:
-				print("Timeout length is increased by 3 seconds") #2
+				print("Timeout length is increased by 3 seconds") 
 
 		elif randStreak == 10 or randStreak == 11:
 			print(Fore.MAGENTA + "You found an epic streak power!")
@@ -330,6 +330,17 @@ while turns == "y":
 				gain += (gain / 100) * 30
 				gain *= 5
 				tries = 2
+		elif randStreak == 13 or randStreak == 14:
+			print(Fore.RED + "Uh oh, you found a corrupt streak power")
+			print()
+			randC = random.randint(1,2)
+			if randC == 1:
+				print("Quick! Your max time per quesion is halved!")
+			elif randC == 2:
+				setback = random.randint(1,streak - 1)
+				print("Setback your streak has been reduced by:",setback)
+				streak -= setback
+
 		else:
 			print(Fore.RED + "No streak power found for this round")
 		time.sleep(2.5)
@@ -392,6 +403,9 @@ while turns == "y":
 		if randStreak > 6 and randStreak < 10 and randR == 2:
 			timer += 3
 			randStreak = 0
+		elif randStreak == 13 or randStreak == 14 and randC == 1:
+			timer /= 2
+			randStreak = 0
 
 # checks for / by 0 error and changes values of nums if this is true
 		if num1 == 0 or num2 == 0:
@@ -433,7 +447,7 @@ while turns == "y":
 		tries -= 1
 		print(Fore.YELLOW)
 		clearConsole()
-		print(tries,"question(s) remaining")
+		print(tries,"question(s) remaining",Fore.GREEN + "                                                                                   Streak:",streak)
 		print()
 		print("Your current amount of points:",points)
 		print(Fore.CYAN + "------------------------------------------------------------------")
