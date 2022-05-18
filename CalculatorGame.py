@@ -33,7 +33,7 @@ else:
 	clearConsole = lambda: os.system('clear')
 #prints the highest score
 clearConsole()
-print(Fore.YELLOW + "UPDATE(2.7):x2 Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.7.3)")
+print(Fore.YELLOW + "UPDATE(2.7):x2 Streak powers!",Fore.BLUE + "││",Fore.YELLOW + "Current version(2.8)")
 print()
 print(Fore.RED + "Hard maintainability: if someone takes your spot from the leaderboard,")
 print("then you will be erased from the leaderboard entirely! ")
